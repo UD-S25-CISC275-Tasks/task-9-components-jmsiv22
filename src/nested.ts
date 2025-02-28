@@ -1,4 +1,3 @@
-import { urlToHttpOptions } from "url";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
 import { duplicateQuestion, makeBlankQuestion } from "./objects";
@@ -263,7 +262,7 @@ export function duplicateQuestionInArray(
     targetId: number,
     newId: number,
 ): Question[] {
-    /*return questions.reduce(
+    /*return questions.map(
             (arr:Question[], question: Question): Question => {
                 question.id === targetId ? question duplicateQuestion(newId, question):question,)};
     }*/
