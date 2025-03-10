@@ -1,8 +1,23 @@
 {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
+<<<<<<< HEAD
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+=======
+>>>>>>> origin/task-state
+=======
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+>>>>>>> origin/task-components
+>>>>>>> solved-components
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true
 }
