@@ -7,14 +7,17 @@ const PEOPLE = [
     "Ada Lovelace",
     "Charles Babbage",
     "Barbara Liskov",
-    "Margaret Hamilton",
+    "Margaret Hamilton"
 ];
 
 export function ChooseTeam(): React.JSX.Element {
-    const [allOptions, setAllOptions] = useState<string[]>(PEOPLE);
+    //const [allOptions, setAllOptions] = useState<string[]>(PEOPLE);
     const [team, setTeam] = useState<string[]>([]);
 
-    function chooseMember() {
+    function chooseMember(option: string) {
+        setTeam((onTeam) =>
+            onTeam.includes(option) ? onTeam : [...onTeam, option]
+        );
         /*
         if (!team.includes(newMember)) {
             team.push(newMember);
@@ -26,6 +29,7 @@ export function ChooseTeam(): React.JSX.Element {
         /*
         team = [];
         */
+        setTeam([]);
     }
 
     return (
@@ -33,10 +37,15 @@ export function ChooseTeam(): React.JSX.Element {
             <h3>Choose Team</h3>
             <Row>
                 <Col>
-                    {allOptions.map((option: string) => (
+                    {PEOPLE.map((option: string) => (
                         <div key={option} style={{ marginBottom: "4px" }}>
                             Add{" "}
-                            <Button onClick={chooseMember} size="sm">
+                            <Button
+                                onClick={() => {
+                                    chooseMember(option);
+                                }}
+                                size="sm"
+                            >
                                 {option}
                             </Button>
                         </div>
