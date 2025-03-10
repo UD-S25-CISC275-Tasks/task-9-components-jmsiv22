@@ -1,15 +1,22 @@
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
+<<<<<<< HEAD
 import { duplicateQuestion, makeBlankQuestion } from "./objects";
+=======
+>>>>>>> origin/task-components
 
 /**
  * Consumes an array of questions and returns a new array with only the questions
  * that are `published`.
  */
 export function getPublishedQuestions(questions: Question[]): Question[] {
+<<<<<<< HEAD
     return questions.filter(
         (question: Question): boolean => question.published,
     );
+=======
+    return [];
+>>>>>>> origin/task-components
 }
 
 /**
@@ -18,6 +25,7 @@ export function getPublishedQuestions(questions: Question[]): Question[] {
  * `expected`, and an empty array for its `options`.
  */
 export function getNonEmptyQuestions(questions: Question[]): Question[] {
+<<<<<<< HEAD
     return questions.filter(
         (question: Question): boolean =>
             !(
@@ -26,6 +34,9 @@ export function getNonEmptyQuestions(questions: Question[]): Question[] {
                 question.options.length === 0
             ),
     );
+=======
+    return [];
+>>>>>>> origin/task-components
 }
 
 /***
@@ -34,12 +45,18 @@ export function getNonEmptyQuestions(questions: Question[]): Question[] {
  */
 export function findQuestion(
     questions: Question[],
+<<<<<<< HEAD
     id: number,
 ): Question | null {
     let q =
         questions.find((question: Question): boolean => question.id === id) ||
         null;
     return q;
+=======
+    id: number
+): Question | null {
+    return null;
+>>>>>>> origin/task-components
 }
 
 /**
@@ -47,9 +64,13 @@ export function findQuestion(
  * with the given `id`.
  */
 export function removeQuestion(questions: Question[], id: number): Question[] {
+<<<<<<< HEAD
     return questions.filter(
         (question: Question): boolean => question.id !== id,
     );
+=======
+    return [];
+>>>>>>> origin/task-components
 }
 
 /***
@@ -57,28 +78,40 @@ export function removeQuestion(questions: Question[], id: number): Question[] {
  * questions, as an array.
  */
 export function getNames(questions: Question[]): string[] {
+<<<<<<< HEAD
     return questions.map((question: Question): string => question.name, "");
+=======
+    return [];
+>>>>>>> origin/task-components
 }
 
 /***
  * Consumes an array of questions and returns the sum total of all their points added together.
  */
 export function sumPoints(questions: Question[]): number {
+<<<<<<< HEAD
     return questions.reduce(
         (sum: number, question: Question): number => question.points + sum,
         0,
     );
+=======
+    return 0;
+>>>>>>> origin/task-components
 }
 
 /***
  * Consumes an array of questions and returns the sum total of the PUBLISHED questions.
  */
 export function sumPublishedPoints(questions: Question[]): number {
+<<<<<<< HEAD
     return questions.reduce(
         (sum: number, question: Question): number =>
             question.published ? question.points + sum : sum,
         0,
     );
+=======
+    return 0;
+>>>>>>> origin/task-components
 }
 
 /***
@@ -99,6 +132,7 @@ id,name,options,points,published
  * Check the unit tests for more examples!
  */
 export function toCSV(questions: Question[]): string {
+<<<<<<< HEAD
     return (
         "id,name,options,points,published\n" +
         questions
@@ -116,6 +150,9 @@ export function toCSV(questions: Question[]): string {
             )
             .join("\n")
     );
+=======
+    return "";
+>>>>>>> origin/task-components
 }
 
 /**
@@ -124,6 +161,7 @@ export function toCSV(questions: Question[]): string {
  * making the `text` an empty string, and using false for both `submitted` and `correct`.
  */
 export function makeAnswers(questions: Question[]): Answer[] {
+<<<<<<< HEAD
     let answers: Answer[] = questions.map(
         (question: Question): Answer => ({
             questionId: question.id,
@@ -133,6 +171,9 @@ export function makeAnswers(questions: Question[]): Answer[] {
         }),
     );
     return answers;
+=======
+    return [];
+>>>>>>> origin/task-components
 }
 
 /***
@@ -140,9 +181,13 @@ export function makeAnswers(questions: Question[]): Answer[] {
  * each question is now published, regardless of its previous published status.
  */
 export function publishAll(questions: Question[]): Question[] {
+<<<<<<< HEAD
     return questions.map(
         (question: Question): Question => ({ ...question, published: true }),
     );
+=======
+    return [];
+>>>>>>> origin/task-components
 }
 
 /***
